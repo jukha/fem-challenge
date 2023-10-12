@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff: "Rubik", sans-serif;
+  --blue: hsl(246, 80%, 60%);
+  --light-orange: hsl(15, 100%, 70%);
+  --soft-blue: hsl(195, 74%, 62%);
+  --light-red: hsl(348, 100%, 68%);
+  --lime-green: hsl(145, 58%, 55%);
+  --violet: hsl(264, 64%, 52%);
+  --soft-orange: hsl(43, 84%, 65%);
+
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+  --border-radius: 20px;
+  --gap: 30px;
+}
+
+body {
+  font-family: var(--ff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--very-dark-blue);
+}
+a {
+  cursor: pointer;
+}
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: 0 15px;
+  display: flex;
+  width: 100%;
+  gap: var(--gap);
+}
+
+.container > * {
+  flex: 1;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  flex-grow: 2;
+}
+.card {
+  flex-basis: calc(33% - var(--gap));
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  max-width: 285px;
+}
+span.label {
+  display: inline-block;
+  margin-top: 30px;
+}
+.profile-card {
+  background: var(--blue);
+  border-radius: var(--border-radius);
+  padding: 30px 30px 80px 30px;
+  position: relative;
+  z-index: 1;
+}
+.profile-card img {
+  max-width: 80px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.card-content {
+  padding: 30px;
+  background: var(--dark-blue);
+  margin-top: -20px;
+  position: relative;
+  color: #fff;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.card-content:hover {
+  background: var(--desaturated-blue);
+}
+.card-content,
+.card-bg {
+  border-radius: var(--border-radius);
+}
+.tabs {
+  background: var(--dark-blue);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  margin-top: -20px;
+  padding: 0px 30px;
+  color: var(--pale-blue);
+  flex-grow: 1;
+}
+.tabs .active {
+  color: #fff;
+}
+.card-bg {
+  width: 100%;
+  min-height: 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: relative;
+}
+.card:nth-child(1) .card-bg {
+  background: var(--light-orange);
+}
+.card:nth-child(2) .card-bg {
+  background: var(--soft-blue);
+}
+.card:nth-child(3) .card-bg {
+  background: var(--light-red);
+}
+.card:nth-child(4) .card-bg {
+  background: var(--lime-green);
+}
+.card:nth-child(5) .card-bg {
+  background: var(--violet);
+}
+.card:nth-child(6) .card-bg {
+  background: var(--soft-orange);
+}
+.card-bg::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: top right 20px;
+  position: absolute;
+}
+.card:nth-child(1) .card-bg::after {
+  background-image: url(images/icon-work.svg);
+}
+.card:nth-child(2) .card-bg::after {
+  background-image: url(images/icon-play.svg);
+}
+.card:nth-child(3) .card-bg::after {
+  background-image: url(images/icon-study.svg);
+}
+.card:nth-child(4) .card-bg::after {
+  background-image: url(images/icon-exercise.svg);
+}
+.card:nth-child(5) .card-bg::after {
+  background-image: url(images/icon-social.svg);
+}
+.card:nth-child(6) .card-bg::after {
+  background-image: url(images/icon-self-care.svg);
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.card-title h3 {
+  font-weight: 500;
+  font-size: 18px;
+}
+.card-content .header {
+  margin-bottom: 15px;
+}
+.header {
+  font-weight: 300;
+  font-size: 45px;
+  color: #fff;
+  max-width: 200px;
+}
+.duration,
+.label {
+  font-size: 16px;
+  color: var(--pale-blue);
+}
